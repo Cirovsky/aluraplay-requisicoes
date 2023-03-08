@@ -18,10 +18,11 @@ async function buscarVideos(){
 }
 botaoPesquisar.addEventListener("click", evento => {
     evento.preventDefault();
-    buscarVideos()
+    buscarVideos();
 });
 pesquisar.addEventListener("keydown", e => {
-    if(e.code == 'Enter'|| e.code =='Tab'){
-        buscarVideos()
+    if(e.code == 'Enter'|| e.code =='Tab' || 
+    e.code =='Backspace' && pesquisar.value.length == 1){
+        buscarVideos();
     }
 });
