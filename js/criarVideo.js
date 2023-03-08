@@ -1,5 +1,5 @@
 import { conectaApi } from "./conectaApi.js";
-const a = "olá";
+
 const form = document.querySelector("[data-formulario]");
 async function adicionarVideo (evento){
     evento.preventDefault();

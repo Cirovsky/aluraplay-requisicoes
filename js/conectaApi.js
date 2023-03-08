@@ -1,5 +1,5 @@
-async function listaVideos () {
-    const conexao = await fetch(" http://localhost:3000/videos");
+async function listaVideos (url = " http://localhost:3000/videos") {
+    const conexao = await fetch(url);
     const conexaoConvertida = await conexao.json();
     return conexaoConvertida;
 }
@@ -25,7 +25,15 @@ async function criaVideo(titulo, descricao, url, imagem){
     return conexaoConvertida;
 }
 
+async function buscaVideo(termo){
+    const conexao = await fetch(`http://localhost:3000/videos?q=${termo}`)
+    const conexaoConvertida = conexao.json();
+
+    return conexaoConvertida;
+}
+
 export const conectaApi = {
     listaVideos,
-    criaVideo
+    criaVideo,
+    buscaVideo
 }
